@@ -1,8 +1,5 @@
 package nb.test.gamepackagev1;
 import java.awt.*;
-import java.util.HashSet;
-import java.util.Set;
-
 
 public class ball
 {//start class
