@@ -1,0 +1,28 @@
+package parentheseschecker;
+import java.util.Stack;
+
+public class ParenthesesChecker {
+    public static boolean areParenthesesBalanced(String str) {
+        Stack<Character> stack1 = new Stack<>();
+
+        for (char c : str.toCharArray()) {
+            if (c == '(' || c == '[' || c == '{') {
+                stack1.push(c);
+            } else if (c == ')' || c == ']' || c == '}') {
+                if (stack1.isEmpty()) {
+                    return false; // Closing parenthesis without any opening parenthesis
+                } else {
+                    char top = stack1.pop();
+                    if ((c == ')' && top != '(') || (c == ']' && top != '[') || (c == '}' && top != '{')) {
+                        return false; // Mismatched parentheses
+                    }}}}
+        return stack1.isEmpty(); // If stack is empty, all parentheses are balanced
+    }
+
+    public static void main(String[] args) {
+        //The string to entered
+        String str1 = "[{[()]()}]";
+        //the output statement
+        System.out.println("The Stack is balanced: " + areParenthesesBalanced(str1));
+    }
+}
